@@ -1,0 +1,204 @@
+================================================================================
+MAPEO DE COLUMNAS ENTRE DATASETS
+================================================================================
+
+Total de columnas únicas (normalizadas): 22511
+Columnas compartidas (2+ datasets): 42
+Columnas compartidas (3 datasets): 1
+
+================================================================================
+COLUMNAS EN LOS 3 DATASETS
+================================================================================
+
+[patient_id]
+  METABRIC: ['PATIENT_ID']
+  SCAN-B:   ['PATIENT_ID']
+  TCGA:     ['Patient_ID']
+
+================================================================================
+COLUMNAS EN 2 DATASETS
+================================================================================
+
+[akt1]
+  METABRIC: ['AKT1']
+  TCGA:     ['AKT1']
+
+[area_mean]
+  SCAN-B:   ['area_mean']
+  TCGA:     ['area_mean']
+
+[area_se]
+  SCAN-B:   ['area_se']
+  TCGA:     ['area_se']
+
+[area_worst]
+  SCAN-B:   ['area_worst']
+  TCGA:     ['area_worst']
+
+[brca1]
+  METABRIC: ['BRCA1']
+  TCGA:     ['BRCA1']
+
+[brca2]
+  METABRIC: ['BRCA2']
+  TCGA:     ['BRCA2']
+
+[compactness_mean]
+  SCAN-B:   ['compactness_mean']
+  TCGA:     ['compactness_mean']
+
+[compactness_se]
+  SCAN-B:   ['compactness_se']
+  TCGA:     ['compactness_se']
+
+[compactness_worst]
+  SCAN-B:   ['compactness_worst']
+  TCGA:     ['compactness_worst']
+
+[concave_points_mean]
+  SCAN-B:   ['concave points_mean']
+  TCGA:     ['concave points_mean']
+
+[concave_points_se]
+  SCAN-B:   ['concave points_se']
+  TCGA:     ['concave points_se']
+
+[concave_points_worst]
+  SCAN-B:   ['concave points_worst']
+  TCGA:     ['concave points_worst']
+
+[concavity_mean]
+  SCAN-B:   ['concavity_mean']
+  TCGA:     ['concavity_mean']
+
+[concavity_se]
+  SCAN-B:   ['concavity_se']
+  TCGA:     ['concavity_se']
+
+[concavity_worst]
+  SCAN-B:   ['concavity_worst']
+  TCGA:     ['concavity_worst']
+
+[diagnosis]
+  SCAN-B:   ['diagnosis']
+  TCGA:     ['diagnosis']
+
+[erbb2]
+  METABRIC: ['ERBB2']
+  TCGA:     ['ERBB2']
+
+[esr1]
+  METABRIC: ['ESR1']
+  TCGA:     ['ESR1']
+
+[fractal_dimension_mean]
+  SCAN-B:   ['fractal_dimension_mean']
+  TCGA:     ['fractal_dimension_mean']
+
+[fractal_dimension_se]
+  SCAN-B:   ['fractal_dimension_se']
+  TCGA:     ['fractal_dimension_se']
+
+[fractal_dimension_worst]
+  SCAN-B:   ['fractal_dimension_worst']
+  TCGA:     ['fractal_dimension_worst']
+
+[mki67]
+  METABRIC: ['MKI67']
+  TCGA:     ['MKI67']
+
+[perimeter_mean]
+  SCAN-B:   ['perimeter_mean']
+  TCGA:     ['perimeter_mean']
+
+[perimeter_se]
+  SCAN-B:   ['perimeter_se']
+  TCGA:     ['perimeter_se']
+
+[perimeter_worst]
+  SCAN-B:   ['perimeter_worst']
+  TCGA:     ['perimeter_worst']
+
+[pgr]
+  METABRIC: ['PGR']
+  TCGA:     ['PGR']
+
+[pik3ca]
+  METABRIC: ['PIK3CA']
+  TCGA:     ['PIK3CA']
+
+[pten]
+  METABRIC: ['PTEN']
+  TCGA:     ['PTEN']
+
+[radius_mean]
+  SCAN-B:   ['radius_mean']
+  TCGA:     ['radius_mean']
+
+[radius_se]
+  SCAN-B:   ['radius_se']
+  TCGA:     ['radius_se']
+
+[radius_worst]
+  SCAN-B:   ['radius_worst']
+  TCGA:     ['radius_worst']
+
+[smoothness_mean]
+  SCAN-B:   ['smoothness_mean']
+  TCGA:     ['smoothness_mean']
+
+[smoothness_se]
+  SCAN-B:   ['smoothness_se']
+  TCGA:     ['smoothness_se']
+
+[smoothness_worst]
+  SCAN-B:   ['smoothness_worst']
+  TCGA:     ['smoothness_worst']
+
+[symmetry_mean]
+  SCAN-B:   ['symmetry_mean']
+  TCGA:     ['symmetry_mean']
+
+[symmetry_se]
+  SCAN-B:   ['symmetry_se']
+  TCGA:     ['symmetry_se']
+
+[symmetry_worst]
+  SCAN-B:   ['symmetry_worst']
+  TCGA:     ['symmetry_worst']
+
+[texture_mean]
+  SCAN-B:   ['texture_mean']
+  TCGA:     ['texture_mean']
+
+[texture_se]
+  SCAN-B:   ['texture_se']
+  TCGA:     ['texture_se']
+
+[texture_worst]
+  SCAN-B:   ['texture_worst']
+  TCGA:     ['texture_worst']
+
+[tp53]
+  METABRIC: ['TP53']
+  TCGA:     ['TP53']
+
+================================================================================
+RESUMEN POR CATEGORÍA
+================================================================================
+
+
+--- IDENTIFIER ---
+  patient_id
+
+--- CLINICAL ---
+
+--- DEMOGRAPHIC ---
+
+--- TREATMENT ---
+
+--- GENOMIC ---
+
+--- IMAGING ---
+
+--- SURVIVAL ---

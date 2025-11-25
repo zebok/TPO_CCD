@@ -1,0 +1,43 @@
+Metodología de Adquisición de Datos: Pipeline ETL para TCGA-BRCA
+Para la construcción del dataset principal de este estudio, centrado en el proyecto TCGA-BRCA (The Cancer Genome Atlas - Breast Invasive Carcinoma), se implementó un flujo de trabajo de Ingeniería de Datos (ETL) dividido en tres fases: Exploración, Extracción Automatizada y Transformación.
+
+1. Fase de Exploración y Definición de la Cohorte
+El proceso inició con la identificación y filtrado manual de casos en el GDC Data Portal (portal.gdc.cancer.gov). Se definieron los siguientes criterios de inclusión para garantizar la calidad y relevancia de los datos:
+
+Proyecto: TCGA-BRCA.
+
+Sitio Primario: Mama (Breast).
+
+Tipo de Datos Genómicos: Gene Expression Quantification (RNA-Seq).
+
+Datos Clínicos: Disponibilidad de Vital Status y Days to Death/Follow-up para análisis de supervivencia.
+
+Como resultado de esta selección, se generó y descargó el archivo de manifiesto oficial: cohort_CancerMAMA.2025-11-21.tsv. Este archivo contiene los identificadores únicos (UUIDs), nombres de archivo y sumas de verificación (MD5) necesarios para la descarga segura de los biospecímenes digitales.
+
+2. Fase de Extracción Automatizada (Extraction)
+Debido a la naturaleza distribuida y el volumen de los datos, se desarrolló un script en Python (01_download_from_manifest.py) para automatizar la descarga. Este script realiza las siguientes operaciones:
+
+Lectura del Manifiesto: Parsea el archivo .tsv para obtener la lista de objetivos.
+
+Petición al API de Datos: Itera sobre los UUIDs y realiza peticiones HTTPS seguras al endpoint api.gdc.cancer.gov/data/.
+
+Organización Estructural: Descarga los archivos crudos (raw data) manteniendo la estructura de carpetas basada en UUIDs requerida para la trazabilidad de la muestra.
+
+3. Fase de Transformación y Limpieza (Transform & Load)
+Los datos descargados consisten en archivos de texto fragmentados (uno por paciente) y estructuras JSON anidadas complejas. Para convertirlos en un formato tabular apto para modelos de Machine Learning, se ejecutó el script de procesamiento 01_generar_tcga_final.py. Este pipeline realizó las siguientes tareas de armonización:
+
+Datos Clínicos: Se aplanó la estructura JSON de los registros clínicos para extraer variables clave como demographic.race, diagnoses.ajcc_pathologic_stage y demographic.days_to_death. Se estandarizaron los valores nulos y se unificaron las unidades de tiempo.
+
+Matriz de Expresión Génica: Se fusionaron los archivos de conteos individuales en una única matriz de expresión (Pacientes x Genes). Se procesaron los identificadores de genes (originalmente en formato Ensembl ENSG...) para asegurar su correspondencia con los metadatos clínicos.
+
+Datos de Imágenes (Whole Slide Images): Se extrajeron y tabularon 30 características morfológicas nucleares (radio, textura, perímetro, etc.) derivadas de las imágenes de patología digital asociadas a los casos, generando el archivo de características celulares (slide_features.csv).
+
+Resultado Final: El proceso culminó con la generación de cuatro datasets estructurados y vinculados por el identificador del paciente (Patient_ID):
+
+tcga_clinical.csv (Datos demográficos y clínicos).
+
+tcga_genomics.csv (Matriz de expresión génica).
+
+tcga_treatments.csv (Historial de tratamientos oncológicos).
+
+tcga_cell_features.csv (Características morfológicas celulares).

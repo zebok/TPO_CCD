@@ -1,0 +1,491 @@
+ANÁLISIS DE COMPLETITUD - DATASET CONSOLIDADO FINAL
+====================================================================================================
+Total de registros: 6156
+Total de columnas: 62
+
+Distribución por dataset:
+  METABRIC: 2002 registros (32.5%)
+  SCANB: 3145 registros (51.1%)
+  TCGA: 1009 registros (16.4%)
+====================================================================================================
+
+COLUMNAS CON 100% DE COMPLETITUD:
+----------------------------------------------------------------------------------------------------
+id_paciente                              | Lleno:  100.0% | No nulos:  6156/6156
+dataset_source                           | Lleno:  100.0% | No nulos:  6156/6156
+
+
+COLUMNAS CON >80% DE COMPLETITUD (Muy útiles):
+----------------------------------------------------------------------------------------------------
+er_status                                | Lleno:   98.8% | No nulos:  6081/6156
+overall_survival                         | Lleno:   98.7% | No nulos:  6074/6156
+her2_status                              | Lleno:   98.6% | No nulos:  6071/6156
+age_at_diagnosis                         | Lleno:   97.9% | No nulos:  6029/6156
+survival_event                           | Lleno:   83.6% | No nulos:  5147/6156
+
+
+COLUMNAS CON 50-80% DE COMPLETITUD (Moderadamente útiles):
+----------------------------------------------------------------------------------------------------
+diagnosis                                | Lleno:   66.3% | No nulos:  4079/6156
+radius_worst                             | Lleno:   66.3% | No nulos:  4079/6156
+concave_points_mean                      | Lleno:   66.2% | No nulos:  4077/6156
+symmetry_mean                            | Lleno:   66.2% | No nulos:  4077/6156
+smoothness_worst                         | Lleno:   66.2% | No nulos:  4077/6156
+area_se                                  | Lleno:   66.2% | No nulos:  4076/6156
+perimeter_worst                          | Lleno:   66.2% | No nulos:  4076/6156
+texture_se                               | Lleno:   66.2% | No nulos:  4075/6156
+fractal_dimension_worst                  | Lleno:   66.2% | No nulos:  4074/6156
+concavity_se                             | Lleno:   66.2% | No nulos:  4073/6156
+fractal_dimension_mean                   | Lleno:   66.1% | No nulos:  4071/6156
+area_worst                               | Lleno:   66.1% | No nulos:  4071/6156
+pr_status                                | Lleno:   66.1% | No nulos:  4069/6156
+texture_mean                             | Lleno:   66.1% | No nulos:  4069/6156
+smoothness_mean                          | Lleno:   66.1% | No nulos:  4067/6156
+radius_se                                | Lleno:   66.0% | No nulos:  4066/6156
+area_mean                                | Lleno:   66.0% | No nulos:  4065/6156
+symmetry_worst                           | Lleno:   66.0% | No nulos:  4065/6156
+concavity_mean                           | Lleno:   66.0% | No nulos:  4064/6156
+perimeter_se                             | Lleno:   66.0% | No nulos:  4064/6156
+compactness_worst                        | Lleno:   66.0% | No nulos:  4064/6156
+concavity_worst                          | Lleno:   66.0% | No nulos:  4063/6156
+perimeter_mean                           | Lleno:   66.0% | No nulos:  4062/6156
+smoothness_se                            | Lleno:   66.0% | No nulos:  4062/6156
+concave_points_se                        | Lleno:   66.0% | No nulos:  4062/6156
+radius_mean                              | Lleno:   66.0% | No nulos:  4060/6156
+compactness_se                           | Lleno:   66.0% | No nulos:  4060/6156
+fractal_dimension_se                     | Lleno:   65.9% | No nulos:  4058/6156
+concave_points_worst                     | Lleno:   65.9% | No nulos:  4056/6156
+symmetry_se                              | Lleno:   65.8% | No nulos:  4053/6156
+compactness_mean                         | Lleno:   65.8% | No nulos:  4052/6156
+texture_worst                            | Lleno:   65.8% | No nulos:  4051/6156
+tumor_grade                              | Lleno:   51.1% | No nulos:  3145/6156
+tumor_size                               | Lleno:   51.1% | No nulos:  3145/6156
+lymph_node_status                        | Lleno:   51.1% | No nulos:  3145/6156
+
+
+COLUMNAS CON <50% DE COMPLETITUD (Limitadas):
+----------------------------------------------------------------------------------------------------
+chemotherapy                             | Lleno:   47.6% | No nulos:  2931/6156
+tumor_subtype                            | Lleno:   47.6% | No nulos:  2929/6156
+radiotherapy                             | Lleno:   47.6% | No nulos:  2928/6156
+hormone_therapy                          | Lleno:   47.4% | No nulos:  2918/6156
+vital_status                             | Lleno:   47.2% | No nulos:  2907/6156
+race                                     | Lleno:   45.8% | No nulos:  2817/6156
+pgr_expression                           | Lleno:   44.8% | No nulos:  2759/6156
+esr1_expression                          | Lleno:   44.5% | No nulos:  2739/6156
+tp53_expression                          | Lleno:   44.5% | No nulos:  2738/6156
+brca1_expression                         | Lleno:   44.5% | No nulos:  2737/6156
+erbb2_expression                         | Lleno:   44.4% | No nulos:  2735/6156
+pik3ca_expression                        | Lleno:   44.4% | No nulos:  2733/6156
+mki67_expression                         | Lleno:   44.3% | No nulos:  2730/6156
+pten_expression                          | Lleno:   44.2% | No nulos:  2723/6156
+akt1_expression                          | Lleno:   44.2% | No nulos:  2723/6156
+brca2_expression                         | Lleno:   44.1% | No nulos:  2715/6156
+menopausal_state                         | Lleno:   32.5% | No nulos:  2002/6156
+breast_surgery                           | Lleno:   32.5% | No nulos:  2002/6156
+gender                                   | Lleno:   15.2% | No nulos:   933/6156
+tumor_stage                              | Lleno:   15.0% | No nulos:   922/6156
+
+
+====================================================================================================
+COMPLETITUD POR DATASET (columnas más relevantes)
+====================================================================================================
+
+
+id_paciente (Completitud global: 100.0%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   | 2002/2002 registros ( 100.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       | 1009/1009 registros ( 100.0%)
+
+er_status (Completitud global: 98.8%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   | 2002/2002 registros ( 100.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  934/1009 registros (  92.6%)
+
+overall_survival (Completitud global: 98.7%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   | 2002/2002 registros ( 100.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  927/1009 registros (  91.9%)
+
+her2_status (Completitud global: 98.6%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   | 2002/2002 registros ( 100.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  924/1009 registros (  91.6%)
+
+age_at_diagnosis (Completitud global: 97.9%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   | 1958/2002 registros (  97.8%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  926/1009 registros (  91.8%)
+
+survival_event (Completitud global: 83.6%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   | 2002/2002 registros ( 100.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |    0/1009 registros (   0.0%)
+
+diagnosis (Completitud global: 66.3%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  934/1009 registros (  92.6%)
+
+radius_worst (Completitud global: 66.3%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  934/1009 registros (  92.6%)
+
+concave_points_mean (Completitud global: 66.2%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  932/1009 registros (  92.4%)
+
+symmetry_mean (Completitud global: 66.2%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  932/1009 registros (  92.4%)
+
+smoothness_worst (Completitud global: 66.2%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  932/1009 registros (  92.4%)
+
+area_se (Completitud global: 66.2%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  931/1009 registros (  92.3%)
+
+perimeter_worst (Completitud global: 66.2%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  931/1009 registros (  92.3%)
+
+texture_se (Completitud global: 66.2%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  930/1009 registros (  92.2%)
+
+fractal_dimension_worst (Completitud global: 66.2%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  929/1009 registros (  92.1%)
+
+concavity_se (Completitud global: 66.2%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  928/1009 registros (  92.0%)
+
+fractal_dimension_mean (Completitud global: 66.1%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  926/1009 registros (  91.8%)
+
+area_worst (Completitud global: 66.1%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  926/1009 registros (  91.8%)
+
+pr_status (Completitud global: 66.1%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  924/1009 registros (  91.6%)
+
+texture_mean (Completitud global: 66.1%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  924/1009 registros (  91.6%)
+
+smoothness_mean (Completitud global: 66.1%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  922/1009 registros (  91.4%)
+
+radius_se (Completitud global: 66.0%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  921/1009 registros (  91.3%)
+
+area_mean (Completitud global: 66.0%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  920/1009 registros (  91.2%)
+
+symmetry_worst (Completitud global: 66.0%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  920/1009 registros (  91.2%)
+
+concavity_mean (Completitud global: 66.0%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  919/1009 registros (  91.1%)
+
+perimeter_se (Completitud global: 66.0%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  919/1009 registros (  91.1%)
+
+compactness_worst (Completitud global: 66.0%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  919/1009 registros (  91.1%)
+
+concavity_worst (Completitud global: 66.0%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  918/1009 registros (  91.0%)
+
+perimeter_mean (Completitud global: 66.0%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  917/1009 registros (  90.9%)
+
+smoothness_se (Completitud global: 66.0%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  917/1009 registros (  90.9%)
+
+concave_points_se (Completitud global: 66.0%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  917/1009 registros (  90.9%)
+
+radius_mean (Completitud global: 66.0%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  915/1009 registros (  90.7%)
+
+compactness_se (Completitud global: 66.0%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  915/1009 registros (  90.7%)
+
+fractal_dimension_se (Completitud global: 65.9%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  913/1009 registros (  90.5%)
+
+concave_points_worst (Completitud global: 65.9%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  911/1009 registros (  90.3%)
+
+symmetry_se (Completitud global: 65.8%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  908/1009 registros (  90.0%)
+
+compactness_mean (Completitud global: 65.8%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  907/1009 registros (  89.9%)
+
+texture_worst (Completitud global: 65.8%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |  906/1009 registros (  89.8%)
+
+tumor_grade (Completitud global: 51.1%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |    0/1009 registros (   0.0%)
+
+tumor_size (Completitud global: 51.1%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |    0/1009 registros (   0.0%)
+
+lymph_node_status (Completitud global: 51.1%)
+----------------------------------------------------------------------------------------------------
+  METABRIC   |    0/2002 registros (   0.0%)
+  SCANB      | 3145/3145 registros ( 100.0%)
+  TCGA       |    0/1009 registros (   0.0%)
+
+
+====================================================================================================
+TODAS LAS COLUMNAS (ordenadas por % de completitud)
+====================================================================================================
+
+id_paciente                              | Lleno:  100.0% | Nulos:    0 | No nulos:  6156
+dataset_source                           | Lleno:  100.0% | Nulos:    0 | No nulos:  6156
+er_status                                | Lleno:   98.8% | Nulos:   75 | No nulos:  6081
+overall_survival                         | Lleno:   98.7% | Nulos:   82 | No nulos:  6074
+her2_status                              | Lleno:   98.6% | Nulos:   85 | No nulos:  6071
+age_at_diagnosis                         | Lleno:   97.9% | Nulos:  127 | No nulos:  6029
+survival_event                           | Lleno:   83.6% | Nulos: 1009 | No nulos:  5147
+diagnosis                                | Lleno:   66.3% | Nulos: 2077 | No nulos:  4079
+radius_worst                             | Lleno:   66.3% | Nulos: 2077 | No nulos:  4079
+concave_points_mean                      | Lleno:   66.2% | Nulos: 2079 | No nulos:  4077
+symmetry_mean                            | Lleno:   66.2% | Nulos: 2079 | No nulos:  4077
+smoothness_worst                         | Lleno:   66.2% | Nulos: 2079 | No nulos:  4077
+area_se                                  | Lleno:   66.2% | Nulos: 2080 | No nulos:  4076
+perimeter_worst                          | Lleno:   66.2% | Nulos: 2080 | No nulos:  4076
+texture_se                               | Lleno:   66.2% | Nulos: 2081 | No nulos:  4075
+fractal_dimension_worst                  | Lleno:   66.2% | Nulos: 2082 | No nulos:  4074
+concavity_se                             | Lleno:   66.2% | Nulos: 2083 | No nulos:  4073
+fractal_dimension_mean                   | Lleno:   66.1% | Nulos: 2085 | No nulos:  4071
+area_worst                               | Lleno:   66.1% | Nulos: 2085 | No nulos:  4071
+pr_status                                | Lleno:   66.1% | Nulos: 2087 | No nulos:  4069
+texture_mean                             | Lleno:   66.1% | Nulos: 2087 | No nulos:  4069
+smoothness_mean                          | Lleno:   66.1% | Nulos: 2089 | No nulos:  4067
+radius_se                                | Lleno:   66.0% | Nulos: 2090 | No nulos:  4066
+area_mean                                | Lleno:   66.0% | Nulos: 2091 | No nulos:  4065
+symmetry_worst                           | Lleno:   66.0% | Nulos: 2091 | No nulos:  4065
+concavity_mean                           | Lleno:   66.0% | Nulos: 2092 | No nulos:  4064
+perimeter_se                             | Lleno:   66.0% | Nulos: 2092 | No nulos:  4064
+compactness_worst                        | Lleno:   66.0% | Nulos: 2092 | No nulos:  4064
+concavity_worst                          | Lleno:   66.0% | Nulos: 2093 | No nulos:  4063
+perimeter_mean                           | Lleno:   66.0% | Nulos: 2094 | No nulos:  4062
+smoothness_se                            | Lleno:   66.0% | Nulos: 2094 | No nulos:  4062
+concave_points_se                        | Lleno:   66.0% | Nulos: 2094 | No nulos:  4062
+radius_mean                              | Lleno:   66.0% | Nulos: 2096 | No nulos:  4060
+compactness_se                           | Lleno:   66.0% | Nulos: 2096 | No nulos:  4060
+fractal_dimension_se                     | Lleno:   65.9% | Nulos: 2098 | No nulos:  4058
+concave_points_worst                     | Lleno:   65.9% | Nulos: 2100 | No nulos:  4056
+symmetry_se                              | Lleno:   65.8% | Nulos: 2103 | No nulos:  4053
+compactness_mean                         | Lleno:   65.8% | Nulos: 2104 | No nulos:  4052
+texture_worst                            | Lleno:   65.8% | Nulos: 2105 | No nulos:  4051
+tumor_grade                              | Lleno:   51.1% | Nulos: 3011 | No nulos:  3145
+tumor_size                               | Lleno:   51.1% | Nulos: 3011 | No nulos:  3145
+lymph_node_status                        | Lleno:   51.1% | Nulos: 3011 | No nulos:  3145
+chemotherapy                             | Lleno:   47.6% | Nulos: 3225 | No nulos:  2931
+tumor_subtype                            | Lleno:   47.6% | Nulos: 3227 | No nulos:  2929
+radiotherapy                             | Lleno:   47.6% | Nulos: 3228 | No nulos:  2928
+hormone_therapy                          | Lleno:   47.4% | Nulos: 3238 | No nulos:  2918
+vital_status                             | Lleno:   47.2% | Nulos: 3249 | No nulos:  2907
+race                                     | Lleno:   45.8% | Nulos: 3339 | No nulos:  2817
+pgr_expression                           | Lleno:   44.8% | Nulos: 3397 | No nulos:  2759
+esr1_expression                          | Lleno:   44.5% | Nulos: 3417 | No nulos:  2739
+tp53_expression                          | Lleno:   44.5% | Nulos: 3418 | No nulos:  2738
+brca1_expression                         | Lleno:   44.5% | Nulos: 3419 | No nulos:  2737
+erbb2_expression                         | Lleno:   44.4% | Nulos: 3421 | No nulos:  2735
+pik3ca_expression                        | Lleno:   44.4% | Nulos: 3423 | No nulos:  2733
+mki67_expression                         | Lleno:   44.3% | Nulos: 3426 | No nulos:  2730
+pten_expression                          | Lleno:   44.2% | Nulos: 3433 | No nulos:  2723
+akt1_expression                          | Lleno:   44.2% | Nulos: 3433 | No nulos:  2723
+brca2_expression                         | Lleno:   44.1% | Nulos: 3441 | No nulos:  2715
+menopausal_state                         | Lleno:   32.5% | Nulos: 4154 | No nulos:  2002
+breast_surgery                           | Lleno:   32.5% | Nulos: 4154 | No nulos:  2002
+gender                                   | Lleno:   15.2% | Nulos: 5223 | No nulos:   933
+tumor_stage                              | Lleno:   15.0% | Nulos: 5234 | No nulos:   922
+
+
+====================================================================================================
+RESUMEN POR CATEGORÍA DE COLUMNA
+====================================================================================================
+
+
+Identificadores:
+----------------------------------------------------------------------------------------------------
+  id_paciente                              |  100.0% completo
+  dataset_source                           |  100.0% completo
+
+Clínicos:
+----------------------------------------------------------------------------------------------------
+  er_status                                |   98.8% completo
+  her2_status                              |   98.6% completo
+  pr_status                                |   66.1% completo
+  tumor_grade                              |   51.1% completo
+  tumor_size                               |   51.1% completo
+  lymph_node_status                        |   51.1% completo
+  tumor_subtype                            |   47.6% completo
+  tumor_stage                              |   15.0% completo
+
+Demográficos:
+----------------------------------------------------------------------------------------------------
+  age_at_diagnosis                         |   97.9% completo
+  race                                     |   45.8% completo
+  menopausal_state                         |   32.5% completo
+  gender                                   |   15.2% completo
+  tumor_stage                              |   15.0% completo
+
+Supervivencia:
+----------------------------------------------------------------------------------------------------
+  overall_survival                         |   98.7% completo
+  survival_event                           |   83.6% completo
+  vital_status                             |   47.2% completo
+
+Tratamientos:
+----------------------------------------------------------------------------------------------------
+  chemotherapy                             |   47.6% completo
+  radiotherapy                             |   47.6% completo
+  hormone_therapy                          |   47.4% completo
+  breast_surgery                           |   32.5% completo
+
+Expresión génica:
+----------------------------------------------------------------------------------------------------
+  pgr_expression                           |   44.8% completo
+  esr1_expression                          |   44.5% completo
+  tp53_expression                          |   44.5% completo
+  brca1_expression                         |   44.5% completo
+  erbb2_expression                         |   44.4% completo
+  pik3ca_expression                        |   44.4% completo
+  mki67_expression                         |   44.3% completo
+  pten_expression                          |   44.2% completo
+  akt1_expression                          |   44.2% completo
+  brca2_expression                         |   44.1% completo
+
+Imaging:
+----------------------------------------------------------------------------------------------------
+  diagnosis                                |   66.3% completo
+  radius_worst                             |   66.3% completo
+  symmetry_mean                            |   66.2% completo
+  smoothness_worst                         |   66.2% completo
+  area_se                                  |   66.2% completo
+  texture_se                               |   66.2% completo
+  fractal_dimension_worst                  |   66.2% completo
+  concavity_se                             |   66.2% completo
+  fractal_dimension_mean                   |   66.1% completo
+  area_worst                               |   66.1% completo
+  texture_mean                             |   66.1% completo
+  smoothness_mean                          |   66.1% completo
+  radius_se                                |   66.0% completo
+  area_mean                                |   66.0% completo
+  symmetry_worst                           |   66.0% completo
+  concavity_mean                           |   66.0% completo
+  compactness_worst                        |   66.0% completo
+  concavity_worst                          |   66.0% completo
+  smoothness_se                            |   66.0% completo
+  radius_mean                              |   66.0% completo
+  compactness_se                           |   66.0% completo
+  fractal_dimension_se                     |   65.9% completo
+  symmetry_se                              |   65.8% completo
+  compactness_mean                         |   65.8% completo
+  texture_worst                            |   65.8% completo

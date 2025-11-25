@@ -1,0 +1,409 @@
+# MAPEO MANUAL DE COLUMNAS ENTRE DATASETS
+# Este archivo define qué columnas de cada dataset representan el mismo concepto
+#
+# Formato:
+#   nombre_columna_unificada:
+#     metabric: NOMBRE_EN_METABRIC
+#     scanb: NOMBRE_EN_SCANB
+#     tcga: NOMBRE_EN_TCGA
+#     tipo: clinical|demographic|genomic|imaging|treatment|survival
+#
+# Si un dataset no tiene esa columna, usa null
+
+# ============================================================================
+# IDENTIFICADORES
+# ============================================================================
+id_paciente:
+  metabric: PATIENT_ID
+  scanb: PATIENT_ID
+  tcga: Patient_ID
+  tipo: identifier
+
+# ============================================================================
+# DATOS CLÍNICOS
+# ============================================================================
+er_status:
+  metabric: ER_IHC
+  scanb: ER_Status
+  tcga: ER_Status_IHC
+  tipo: clinical
+
+pr_status:
+  metabric: null
+  scanb: PgR_Status
+  tcga: PR_Status_IHC
+  tipo: clinical
+
+her2_status:
+  metabric: HER2_SNP6
+  scanb: HER2_Status
+  tcga: HER2_Status_IHC
+  tipo: clinical
+
+tumor_subtype:
+  metabric: CLAUDIN_SUBTYPE
+  scanb: null
+  tcga: Subtype_PAM50
+  tipo: clinical
+
+tumor_grade:
+  metabric: null
+  scanb: Nottingham_Grade
+  tcga: null
+  tipo: clinical
+
+tumor_stage:
+  metabric: null
+  scanb: null
+  tcga: AJCC_Stage
+  tipo: clinical
+
+tumor_size:
+  metabric: null
+  scanb: TumorSize_mm
+  tcga: null
+  tipo: clinical
+
+lymph_node_status:
+  metabric: null
+  scanb: LymphNode_Status
+  tcga: null
+  tipo: clinical
+
+# ============================================================================
+# DATOS DEMOGRÁFICOS
+# ============================================================================
+age_at_diagnosis:
+  metabric: AGE_AT_DIAGNOSIS
+  scanb: Age
+  tcga: demographic.age_at_index
+  tipo: demographic
+
+race:
+  metabric: RACE
+  scanb: null
+  tcga: demographic.race
+  tipo: demographic
+
+gender:
+  metabric: null
+  scanb: null
+  tcga: demographic.gender
+  tipo: demographic
+
+menopausal_state:
+  metabric: MENOPAUSAL_STATE
+  scanb: null
+  tcga: null
+  tipo: demographic
+
+# ============================================================================
+# SUPERVIVENCIA
+# ============================================================================
+vital_status:
+  metabric: VITAL_STATUS_ICD
+  scanb: null
+  tcga: Vital_Status
+  tipo: survival
+
+overall_survival:
+  metabric: OS_MONTHS  # OJO: está en meses, necesita conversión a días
+  scanb: FollowUp_Years  # OJO: está en años, necesita conversión a días
+  tcga: Overall_Survival_Days
+  tipo: survival
+
+survival_event:
+  metabric: OS_STATUS
+  scanb: Event_Death
+  tcga: null
+  tipo: survival
+
+# ============================================================================
+# TRATAMIENTOS
+# ============================================================================
+chemotherapy:
+  metabric: CHEMOTHERAPY
+  scanb: null
+  tcga: had_chemo
+  tipo: treatment
+
+hormone_therapy:
+  metabric: HORMONE_THERAPY
+  scanb: null
+  tcga: had_hormone_therapy
+  tipo: treatment
+
+radiotherapy:
+  metabric: RADIO_THERAPY
+  scanb: null
+  tcga: had_radiation
+  tipo: treatment
+
+breast_surgery:
+  metabric: BREAST_SURGERY
+  scanb: null
+  tcga: null
+  tipo: treatment
+
+# ============================================================================
+# DATOS GENÓMICOS (genes clave)
+# ============================================================================
+esr1_expression:
+  metabric: ESR1
+  scanb: null
+  tcga: ESR1
+  tipo: genomic_key
+
+pgr_expression:
+  metabric: PGR
+  scanb: null
+  tcga: PGR
+  tipo: genomic_key
+
+erbb2_expression:
+  metabric: ERBB2
+  scanb: null
+  tcga: ERBB2
+  tipo: genomic_key
+
+mki67_expression:
+  metabric: MKI67
+  scanb: null
+  tcga: MKI67
+  tipo: genomic_key
+
+tp53_expression:
+  metabric: TP53
+  scanb: null
+  tcga: TP53
+  tipo: genomic_key
+
+brca1_expression:
+  metabric: BRCA1
+  scanb: null
+  tcga: BRCA1
+  tipo: genomic_key
+
+brca2_expression:
+  metabric: BRCA2
+  scanb: null
+  tcga: BRCA2
+  tipo: genomic_key
+
+pik3ca_expression:
+  metabric: PIK3CA
+  scanb: null
+  tcga: PIK3CA
+  tipo: genomic_key
+
+pten_expression:
+  metabric: PTEN
+  scanb: null
+  tcga: PTEN
+  tipo: genomic_key
+
+akt1_expression:
+  metabric: AKT1
+  scanb: null
+  tcga: AKT1
+  tipo: genomic_key
+
+# ============================================================================
+# IMAGING / MORFOLOGÍA CELULAR
+# ============================================================================
+diagnosis:
+  metabric: null
+  scanb: diagnosis
+  tcga: diagnosis
+  tipo: imaging
+
+radius_mean:
+  metabric: null
+  scanb: radius_mean
+  tcga: radius_mean
+  tipo: imaging
+
+texture_mean:
+  metabric: null
+  scanb: texture_mean
+  tcga: texture_mean
+  tipo: imaging
+
+perimeter_mean:
+  metabric: null
+  scanb: perimeter_mean
+  tcga: perimeter_mean
+  tipo: imaging
+
+area_mean:
+  metabric: null
+  scanb: area_mean
+  tcga: area_mean
+  tipo: imaging
+
+smoothness_mean:
+  metabric: null
+  scanb: smoothness_mean
+  tcga: smoothness_mean
+  tipo: imaging
+
+compactness_mean:
+  metabric: null
+  scanb: compactness_mean
+  tcga: compactness_mean
+  tipo: imaging
+
+concavity_mean:
+  metabric: null
+  scanb: concavity_mean
+  tcga: concavity_mean
+  tipo: imaging
+
+concave_points_mean:
+  metabric: null
+  scanb: concave points_mean
+  tcga: concave points_mean
+  tipo: imaging
+
+symmetry_mean:
+  metabric: null
+  scanb: symmetry_mean
+  tcga: symmetry_mean
+  tipo: imaging
+
+fractal_dimension_mean:
+  metabric: null
+  scanb: fractal_dimension_mean
+  tcga: fractal_dimension_mean
+  tipo: imaging
+
+# Standard error features
+radius_se:
+  metabric: null
+  scanb: radius_se
+  tcga: radius_se
+  tipo: imaging
+
+texture_se:
+  metabric: null
+  scanb: texture_se
+  tcga: texture_se
+  tipo: imaging
+
+perimeter_se:
+  metabric: null
+  scanb: perimeter_se
+  tcga: perimeter_se
+  tipo: imaging
+
+area_se:
+  metabric: null
+  scanb: area_se
+  tcga: area_se
+  tipo: imaging
+
+smoothness_se:
+  metabric: null
+  scanb: smoothness_se
+  tcga: smoothness_se
+  tipo: imaging
+
+compactness_se:
+  metabric: null
+  scanb: compactness_se
+  tcga: compactness_se
+  tipo: imaging
+
+concavity_se:
+  metabric: null
+  scanb: concavity_se
+  tcga: concavity_se
+  tipo: imaging
+
+concave_points_se:
+  metabric: null
+  scanb: concave points_se
+  tcga: concave points_se
+  tipo: imaging
+
+symmetry_se:
+  metabric: null
+  scanb: symmetry_se
+  tcga: symmetry_se
+  tipo: imaging
+
+fractal_dimension_se:
+  metabric: null
+  scanb: fractal_dimension_se
+  tcga: fractal_dimension_se
+  tipo: imaging
+
+# Worst features
+radius_worst:
+  metabric: null
+  scanb: radius_worst
+  tcga: radius_worst
+  tipo: imaging
+
+texture_worst:
+  metabric: null
+  scanb: texture_worst
+  tcga: texture_worst
+  tipo: imaging
+
+perimeter_worst:
+  metabric: null
+  scanb: perimeter_worst
+  tcga: perimeter_worst
+  tipo: imaging
+
+area_worst:
+  metabric: null
+  scanb: area_worst
+  tcga: area_worst
+  tipo: imaging
+
+smoothness_worst:
+  metabric: null
+  scanb: smoothness_worst
+  tcga: smoothness_worst
+  tipo: imaging
+
+compactness_worst:
+  metabric: null
+  scanb: compactness_worst
+  tcga: compactness_worst
+  tipo: imaging
+
+concavity_worst:
+  metabric: null
+  scanb: concavity_worst
+  tcga: concavity_worst
+  tipo: imaging
+
+concave_points_worst:
+  metabric: null
+  scanb: concave points_worst
+  tcga: concave points_worst
+  tipo: imaging
+
+symmetry_worst:
+  metabric: null
+  scanb: symmetry_worst
+  tcga: symmetry_worst
+  tipo: imaging
+
+fractal_dimension_worst:
+  metabric: null
+  scanb: fractal_dimension_worst
+  tcga: fractal_dimension_worst
+  tipo: imaging
+
+# ============================================================================
+# NOTAS:
+# ============================================================================
+# - Los valores null indican que ese dataset no tiene esa información
+# - Para columnas con unidades diferentes (OS_MONTHS vs Overall_Survival_Days)
+#   el script de consolidación maneja la conversión automáticamente
+# - Las columnas de imaging (mean, se, worst) están presentes en SCAN-B y TCGA
+# - METABRIC tiene features nucleares (NUC_0_MEAN, etc) que son diferentes

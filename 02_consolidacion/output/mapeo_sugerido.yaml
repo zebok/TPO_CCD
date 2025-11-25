@@ -1,0 +1,285 @@
+# MAPEO SUGERIDO AUTOMÁTICAMENTE
+# Revisa y ajusta según sea necesario
+# Luego copia los mapeos relevantes a column_mapping_manual.yaml
+
+
+================================================================================
+# IDENTIFIER
+================================================================================
+
+patient_id:
+  metabric: PATIENT_ID
+  scanb: PATIENT_ID
+  tcga: Patient_ID
+  tipo: identifier
+
+
+================================================================================
+# CLINICAL
+================================================================================
+
+er_status:
+  metabric: ER_IHC
+  scanb: ER_Status
+  tcga: ER_Status_IHC
+  tipo: clinical
+
+her2_status:
+  metabric: HER2_SNP6
+  scanb: HER2_Status
+  tcga: HER2_Status_IHC
+  tipo: clinical
+
+pr_status:
+  metabric: null
+  scanb: PgR_Status
+  tcga: PR_Status_IHC
+  tipo: clinical
+
+erbb2_expression:
+  metabric: ERBB2
+  scanb: null
+  tcga: ERBB2
+  tipo: genomic_key
+
+tumor_subtype:
+  metabric: CLAUDIN_SUBTYPE
+  scanb: null
+  tcga: Subtype_PAM50
+  tipo: clinical
+
+tumor_grade:
+  metabric: null
+  scanb: Nottingham_Grade
+  tcga: null
+  tipo: clinical
+
+tumor_stage:
+  metabric: null
+  scanb: null
+  tcga: AJCC_Stage
+  tipo: clinical
+
+tumor_size:
+  metabric: null
+  scanb: TumorSize_mm
+  tcga: null
+  tipo: clinical
+
+lymph_node_status:
+  metabric: null
+  scanb: LymphNode_Status
+  tcga: null
+  tipo: clinical
+
+
+================================================================================
+# DEMOGRAPHIC
+================================================================================
+
+age:
+  metabric: AGE_AT_DIAGNOSIS
+  scanb: Age
+  tcga: demographic.age_at_index
+  tipo: demographic
+
+race:
+  metabric: RACE
+  scanb: null
+  tcga: demographic.race
+  tipo: demographic
+
+
+================================================================================
+# SURVIVAL
+================================================================================
+
+vital_status:
+  metabric: VITAL_STATUS_ICD
+  scanb: null
+  tcga: Vital_Status
+  tipo: survival
+
+overall_survival:
+  metabric: OS_MONTHS
+  scanb: FollowUp_Years
+  tcga: Overall_Survival_Days
+  tipo: survival
+
+survival_event:
+  metabric: OS_STATUS
+  scanb: Event_Death
+  tcga: null
+  tipo: survival
+
+
+================================================================================
+# TREATMENT
+================================================================================
+
+hormone_therapy:
+  metabric: HORMONE_THERAPY
+  scanb: null
+  tcga: had_hormone_therapy
+  tipo: treatment
+
+chemotherapy:
+  metabric: CHEMOTHERAPY
+  scanb: null
+  tcga: had_chemo
+  tipo: treatment
+
+radiotherapy:
+  metabric: RADIO_THERAPY
+  scanb: null
+  tcga: had_radiation
+  tipo: treatment
+
+
+================================================================================
+# GENOMIC_KEY
+================================================================================
+
+akt1:
+  metabric: AKT1
+  scanb: null
+  tcga: AKT1
+  tipo: genomic_key
+
+brca1:
+  metabric: BRCA1
+  scanb: null
+  tcga: BRCA1
+  tipo: genomic_key
+
+brca2:
+  metabric: BRCA2
+  scanb: null
+  tcga: BRCA2
+  tipo: genomic_key
+
+esr1:
+  metabric: ESR1
+  scanb: null
+  tcga: ESR1
+  tipo: genomic_key
+
+mki67:
+  metabric: MKI67
+  scanb: null
+  tcga: MKI67
+  tipo: genomic_key
+
+pgr:
+  metabric: PGR
+  scanb: null
+  tcga: PGR
+  tipo: genomic_key
+
+pik3ca:
+  metabric: PIK3CA
+  scanb: null
+  tcga: PIK3CA
+  tipo: genomic_key
+
+pten:
+  metabric: PTEN
+  scanb: null
+  tcga: PTEN
+  tipo: genomic_key
+
+tp53:
+  metabric: TP53
+  scanb: null
+  tcga: TP53
+  tipo: genomic_key
+
+
+================================================================================
+# IMAGING
+================================================================================
+
+area_mean:
+  metabric: null
+  scanb: area_mean
+  tcga: area_se
+  tipo: imaging
+
+area_se:
+  metabric: null
+  scanb: area_se
+  tcga: area_worst
+  tipo: imaging
+
+compactness_mean:
+  metabric: null
+  scanb: compactness_mean
+  tcga: compactness_worst
+  tipo: imaging
+
+concavity_mean:
+  metabric: null
+  scanb: concavity_mean
+  tcga: concavity_se
+  tipo: imaging
+
+concavity_se:
+  metabric: null
+  scanb: concavity_se
+  tcga: concavity_worst
+  tipo: imaging
+
+diagnosis:
+  metabric: null
+  scanb: diagnosis
+  tcga: diagnosis
+  tipo: imaging
+
+fractal_dimension_mean:
+  metabric: null
+  scanb: fractal_dimension_mean
+  tcga: fractal_dimension_worst
+  tipo: imaging
+
+radius_mean:
+  metabric: null
+  scanb: radius_mean
+  tcga: radius_se
+  tipo: imaging
+
+radius_se:
+  metabric: null
+  scanb: radius_se
+  tcga: radius_worst
+  tipo: imaging
+
+smoothness_mean:
+  metabric: null
+  scanb: smoothness_mean
+  tcga: smoothness_worst
+  tipo: imaging
+
+symmetry_mean:
+  metabric: null
+  scanb: symmetry_mean
+  tcga: symmetry_se
+  tipo: imaging
+
+symmetry_se:
+  metabric: null
+  scanb: symmetry_se
+  tcga: symmetry_worst
+  tipo: imaging
+
+texture_mean:
+  metabric: null
+  scanb: texture_mean
+  tcga: texture_se
+  tipo: imaging
+
+texture_se:
+  metabric: null
+  scanb: texture_se
+  tcga: texture_worst
+  tipo: imaging
+

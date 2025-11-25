@@ -1,0 +1,22 @@
+METODOLOGÍA DE ADQUISICIÓN DE DATOS: COHORTE SCAN-B
+===================================================
+
+1. FUENTE DE DATOS
+------------------
+Origen: NCBI Gene Expression Omnibus (GEO)
+Repositorio: https://www.ncbi.nlm.nih.gov/geo/
+Accession ID: GSE96058
+Estudio Principal: Sweden Cancerome Analysis Network - Breast (SCAN-B)
+Nivel de Datos: Transcriptómica (RNA-Seq) y Datos Clínicos Asociados.
+
+2. ESTRATEGIA DE EXTRACCIÓN (ETL PIPELINE)
+------------------------------------------
+Para la ingestión de datos de esta cohorte europea, se desarrolló un pipeline de extracción automatizada ("04_etl_scanb_geo.py") utilizando las librerías `urllib` y `pandas` de Python para interactuar directamente con el servidor FTP del NCBI.
+
+El proceso se dividió en tres fases de descarga y procesamiento:
+
+A. Metadatos Clínicos (Series Matrix)
+   - Se descargó el archivo `GSE96058_series_matrix.txt.gz`.
+   - Desafío: Los datos clínicos en GEO se almacenan en un formato no estructurado (pares clave-valor dentro de cabeceras "metrics").
+   - Procesamiento: Se implementó un parser para extraer variables fenotípicas clave como 'TumorSize_mm', 'LymphNode_Status' y 'Nottingham_Grade'.
+   - Limpieza: Se detectaron valores nulos codificados como cadenas de texto "ND" (Not Done) o "NA", los cuales fueron

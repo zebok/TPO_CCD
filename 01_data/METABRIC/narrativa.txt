@@ -1,0 +1,5 @@
+Adquisición de Datos - Cohorte METABRIC *"La obtención de datos para la cohorte METABRIC (n=2,500) requirió un enfoque híbrido de ingestión de datos.
+
+En una primera instancia, se implementó un script de conexión a la API REST de cBioPortal para la descarga masiva de los perfiles moleculares (Z-Scores de expresión génica) y las variables clínicas de supervivencia (OS_STATUS, OS_MONTHS).
+
+Sin embargo, dado que los repositorios públicos estandarizados no incluyen ciertas variables fenotípicas granulares requeridas para este estudio (específicamente morfología nuclear y regímenes quirúrgicos), se desarrolló un módulo de parsing secundario. Este módulo procesó los archivos de datos suplementarios (Supplementary Table S2) de la publicación original de Curtis et al. (2012), permitiendo extraer características como NUC_AREA_MEAN y normalizarlas al esquema de identificadores del proyecto."
