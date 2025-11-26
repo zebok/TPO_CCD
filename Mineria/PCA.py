@@ -18,7 +18,7 @@ dim(bd)
 head(bd)
 str(bd)
 
-# 2) Definir vectores de nombres de variables -----------------------------
+# 2) Definir vectores de nombres de variables -------------------------
 
 # Variables de expresión génica
 genes_cols <- c(
