@@ -52,10 +52,10 @@ def guardar_columnas(columnas, archivo_salida):
 
 def main():
     # Ruta del archivo de entrada
-    archivo_entrada = "/Users/sebastianporini/Desktop/TPO_CCD/01_data/TCGA_BRCA/outputs/tcga_brca_consolidated.csv"
+    archivo_entrada = "/Users/sebastianporini/Desktop/TPO_CCD/02_consolidacion/output/dataset_consolidado_final.csv"
     
     # Ruta del archivo de salida
-    archivo_salida = "/Users/sebastianporini/Desktop/TPO_CCD/lista_columnas_tcga_brca.txt"
+    archivo_salida = "/Users/sebastianporini/Desktop/TPO_CCD/lista_columnas_dataset_consolidado.txt"
     
     print("Leyendo archivo CSV...")
     columnas = obtener_columnas_csv(archivo_entrada)

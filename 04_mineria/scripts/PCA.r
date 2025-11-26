@@ -7,11 +7,11 @@ library(MASS)
 library(tidyr)
 
 # 1) Cargar datos ---------------------------------------------------------
-bd <- read.csv(
-  "C:/Users/Agus Mieres/Desktop/dataset_consolidado_final.csv",
-  header = TRUE,
-  stringsAsFactors = FALSE
-)
+# Ruta al dataset consolidado que está en la carpeta 02_consolidacion/output (carpeta hermana)
+project_root <- rprojroot::find_root(rprojroot::has_file("04_mineria.Rproj"))
+# Construir la ruta al archivo que está fuera de la carpeta del proyecto
+dataset_path <- file.path(dirname(project_root), "02_consolidacion", "output", "dataset_consolidado_final.csv")
+bd <- read.csv(dataset_path, header = TRUE, stringsAsFactors = FALSE)
 
 # Mirar dimensiones y columnas
 dim(bd)
