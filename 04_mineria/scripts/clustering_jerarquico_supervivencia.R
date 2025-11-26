@@ -267,34 +267,20 @@ cluster_stats <- datos_clustered %>%
 
 print(cluster_stats)
 
-# --- 10. HEATMAP DE CARACTERÍSTICAS POR CLUSTER ---
+# --- 10. VISUALIZACIÓN DE PERFILES DE CLUSTER ---
 
-# Calcular promedios de TODAS las features por cluster
+# Calcular promedios por cluster
 cluster_profiles <- datos_clustered %>%
   group_by(cluster) %>%
-  summarise(across(all_of(features_clustering), ~mean(., na.rm = TRUE)))
+  summarise(
+    edad_media = mean(age_at_diagnosis, na.rm = TRUE),
+    prop_er_pos = mean(er_pos, na.rm = TRUE),
+    prop_her2_pos = mean(her2_pos, na.rm = TRUE)
+  )
 
-# Convertir a matriz para heatmap
-cluster_matrix <- cluster_profiles %>%
-  select(-cluster) %>%
-  as.matrix()
-
-rownames(cluster_matrix) <- paste("Cluster", cluster_profiles$cluster)
-
-# Estandarizar por columna (z-score)
-cluster_matrix_scaled <- scale(cluster_matrix)
-
-# Heatmap
-png(file.path(project_root, "output", "clustering_heatmap_perfiles.png"),
-    width = 12, height = 8, units = "in", res = 300)
-heatmap(cluster_matrix_scaled,
-        main = "Perfil Molecular de Clusters\n(Z-score)",
-        xlab = "Features",
-        ylab = "Cluster",
-        col = colorRampPalette(c("blue", "white", "red"))(50),
-        scale = "none",
-        margins = c(10, 8))
-dev.off()
+print("")
+print("Perfiles promedio por cluster:")
+print(cluster_profiles)
 
 # --- 11. VISUALIZACIÓN PCA DE CLUSTERS ---
 
