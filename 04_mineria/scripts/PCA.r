@@ -111,12 +111,18 @@ res_pca_genes <- PCA(X_genes_scaled, graph = FALSE)
 
 # 4) Screeplot: varianza explicada por cada componente ---------------
 
-fviz_screeplot(res_pca_genes, addlabels = TRUE,
-               title = "PCA genes - Varianza explicada por componente")
+plot_scree_genes <- fviz_screeplot(res_pca_genes, addlabels = TRUE,
+                                   title = "PCA genes - Varianza explicada por componente")
+print(plot_scree_genes)
+
+# Guardar
+output_path <- file.path(project_root, "output", "pca_genes_screeplot.png")
+ggsave(output_path, plot = plot_scree_genes, width = 10, height = 8, dpi = 300)
+print(paste("Gráfico guardado en:", output_path))
 
 # 5) Pacientes en el plano PC1–PC2, coloreados por subtipo tumoral -----
 
-fviz_pca_ind(
+plot_pca_subtipo <- fviz_pca_ind(
   res_pca_genes,
   label = "none",
   habillage = bd_genes_clean$tumor_subtype,  # color por subtipo
@@ -124,10 +130,15 @@ fviz_pca_ind(
   ellipse.level = 0.95,
   title = "PCA genes - Pacientes coloreados por subtipo tumoral"
 )
+print(plot_pca_subtipo)
+
+output_path <- file.path(project_root, "output", "pca_genes_subtipo.png")
+ggsave(output_path, plot = plot_pca_subtipo, width = 10, height = 8, dpi = 300)
+print(paste("Gráfico guardado en:", output_path))
 
 # 6) Pacientes coloreados por ER status -------------------------------
 
-fviz_pca_ind(
+plot_pca_er <- fviz_pca_ind(
   res_pca_genes,
   label = "none",
   habillage = bd_genes_clean$er_status,      # color por ER+
@@ -135,6 +146,11 @@ fviz_pca_ind(
   ellipse.level = 0.95,
   title = "PCA genes - Pacientes coloreados por ER status"
 )
+print(plot_pca_er)
+
+output_path <- file.path(project_root, "output", "pca_genes_er_status.png")
+ggsave(output_path, plot = plot_pca_er, width = 10, height = 8, dpi = 300)
+print(paste("Gráfico guardado en:", output_path))
 
 # Cargar/variables del PCA (genes)
 loadings_genes <- as.data.frame(res_pca_genes$var$coord)
@@ -147,13 +163,18 @@ loadings_PC2 <- loadings_genes[order(-abs(loadings_genes$Dim.2)), c("gene", "Dim
 loadings_PC1
 loadings_PC2
 
-fviz_pca_var(
+plot_pca_var_genes <- fviz_pca_var(
   res_pca_genes,
   col.var = "contrib",
   gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
   repel = TRUE,
   title = "PCA genes - Contribución de cada gen a las componentes"
 )
+print(plot_pca_var_genes)
+
+output_path <- file.path(project_root, "output", "pca_genes_variables.png")
+ggsave(output_path, plot = plot_pca_var_genes, width = 10, height = 8, dpi = 300)
+print(paste("Gráfico guardado en:", output_path))
 
 #-------------------------------------------------------------------------------------------
 #PCA de imagen + clusters
@@ -202,14 +223,19 @@ library(factoextra)
 res_pca_img <- PCA(X_img_scaled, graph = FALSE)
 
 # Screeplot: varianza explicada
-fviz_screeplot(
+plot_scree_img <- fviz_screeplot(
   res_pca_img,
   addlabels = TRUE,
   title = "PCA imagen - Varianza explicada por componente"
 )
+print(plot_scree_img)
+
+output_path <- file.path(project_root, "output", "pca_imagen_screeplot.png")
+ggsave(output_path, plot = plot_scree_img, width = 10, height = 8, dpi = 300)
+print(paste("Gráfico guardado en:", output_path))
 
 # Pacientes en PC1–PC2 por subtipo
-fviz_pca_ind(
+plot_pca_img_subtipo <- fviz_pca_ind(
   res_pca_img,
   label = "none",
   habillage = bd_img_clean$tumor_subtype,
@@ -217,9 +243,14 @@ fviz_pca_ind(
   ellipse.level = 0.95,
   title = "PCA imagen - Pacientes por subtipo tumoral"
 )
+print(plot_pca_img_subtipo)
+
+output_path <- file.path(project_root, "output", "pca_imagen_subtipo.png")
+ggsave(output_path, plot = plot_pca_img_subtipo, width = 10, height = 8, dpi = 300)
+print(paste("Gráfico guardado en:", output_path))
 
 # Pacientes en PC1–PC2 por ER status
-fviz_pca_ind(
+plot_pca_img_er <- fviz_pca_ind(
   res_pca_img,
   label = "none",
   habillage = bd_img_clean$er_status,
@@ -227,13 +258,23 @@ fviz_pca_ind(
   ellipse.level = 0.95,
   title = "PCA imagen - Pacientes por ER status"
 )
+print(plot_pca_img_er)
+
+output_path <- file.path(project_root, "output", "pca_imagen_er_status.png")
+ggsave(output_path, plot = plot_pca_img_er, width = 10, height = 8, dpi = 300)
+print(paste("Gráfico guardado en:", output_path))
 
 # Variables (features de imagen)
-fviz_pca_var(
+plot_pca_var_img <- fviz_pca_var(
   res_pca_img,
   col.var = "contrib",
   gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
   repel = TRUE,
   title = "PCA imagen - Contribución de cada feature"
 )
+print(plot_pca_var_img)
+
+output_path <- file.path(project_root, "output", "pca_imagen_variables.png")
+ggsave(output_path, plot = plot_pca_var_img, width = 10, height = 8, dpi = 300)
+print(paste("Gráfico guardado en:", output_path))
 
