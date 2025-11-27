@@ -1,0 +1,29 @@
+========================================================================
+REPORTE: DISPARIDADES POR RAZA/ETNIA EN CÁNCER DE MAMA
+========================================================================
+
+Fecha de análisis: 2025-11-26
+Total de pacientes analizados: 2817
+
+--- HALLAZGOS PRINCIPALES ---
+
+1. ESTADIO AL DIAGNÓSTICO:
+   - Test Chi-cuadrado p-value: NA
+   - Conclusión: No se pudo calcular (datos insuficientes)
+
+2. SUPERVIVENCIA:
+   - Test Chi-cuadrado p-value: NA
+   - Conclusión: No se pudo calcular (datos insuficientes)
+
+--- ARCHIVOS GENERADOS ---
+Tablas:
+  - disparidades_raza_estadio.csv
+  - disparidades_raza_estadios_avanzados.csv
+  - disparidades_raza_mortalidad.csv
+
+Gráficos:
+  - disparidades_estadios_por_raza.png
+  - disparidades_estadios_avanzados.png
+  - disparidades_mortalidad.png
+
+========================================================================
