@@ -187,3 +187,127 @@ print(head(imp, 20))
 #          cindex=cdx$concordance)
 # })
 # arrange(res, desc(cindex))
+
+
+# --- Predicción para N pacientes (robusto a formatos de ranger) -------
+
+N <- 5
+
+# Opción A: manual (pone índices del TEST que quieras)
+# pac_idx <- c(1, 2, 3, 4, 5)
+
+# Opción B: automática (extremos + mediano según riesgo del TEST)
+#  - usa 'risk_score' calculado antes para TODO el test
+orden <- order(risk_score, decreasing = TRUE)
+med  <- orden[round(length(orden) / 2)]
+pac_idx <- unique(c(orden[1:2], med, tail(orden, 2)))[1:N]
+
+stopifnot(all(pac_idx >= 1 & pac_idx <= nrow(df_te)))
+
+df_sel  <- df_te[pac_idx, , drop = FALSE]
+pred_sel <- predict(rsf, data = df_sel, type = "response")
+
+# Tiempos únicos del bosque
+times <- pred_sel$unique.death.times
+if (is.null(times)) times <- pred_te$unique.death.times
+
+# CHF y S(t) según devuelva ranger
+if (!is.null(pred_sel$chf)) {
+  CHF_mat <- if (is.matrix(pred_sel$chf)) pred_sel$chf else do.call(rbind, pred_sel$chf)
+  S_mat   <- exp(-CHF_mat)
+} else if (!is.null(pred_sel$survival)) {
+  S_mat   <- if (is.matrix(pred_sel$survival)) pred_sel$survival else do.call(rbind, pred_sel$survival)
+  S_mat   <- pmax(S_mat, 1e-12)
+  CHF_mat <- -log(S_mat)
+} else {
+  stop("La predicción de ranger no trae 'chf' ni 'survival'.")
+}
+
+# Horizontes
+t3y <- 365 * 3; t5y <- 365 * 5
+k3  <- findInterval(t3y, times, all.inside = TRUE)
+k5  <- findInterval(t5y, times, all.inside = TRUE)
+
+# Risk score y mediana
+risk_sel <- apply(CHF_mat, 1, \(x) tail(x, 1))
+mediana_fun <- function(s, tt) { idx <- which(s <= 0.5)[1]; if (is.na(idx)) NA_real_ else tt[idx] }
+
+res_pacientes <- tibble::tibble(
+  fila_test          = pac_idx,
+  risk_score         = risk_sel,
+  S_3_anios          = S_mat[, k3],
+  S_5_anios          = S_mat[, k5],
+  P_evento_3_anios   = 1 - S_mat[, k3],
+  P_evento_5_anios   = 1 - S_mat[, k5],
+  mediana_superviv_d = apply(S_mat, 1, mediana_fun, tt = times)
+) |>
+  dplyr::arrange(desc(risk_score))
+
+cat("\n=== Predicciones por paciente (filas de TEST) ===\n")
+print(res_pacientes, n = Inf)
+
+# --- Curvas S(t) para los N pacientes ---------------------------------
+df_curvas <- purrr::map_dfr(seq_len(nrow(S_mat)), function(i) {
+  tibble::tibble(
+    paciente = paste0("Paciente test #", res_pacientes$fila_test[i]),
+    tiempo   = times,
+    S        = S_mat[match(res_pacientes$fila_test[i], pac_idx), ]
+  )
+})
+
+ggplot2::ggplot(df_curvas, ggplot2::aes(x = tiempo, y = S, color = paciente)) +
+  ggplot2::geom_line(size = 1) +
+  ggplot2::geom_vline(xintercept = c(t3y, t5y), linetype = "dashed") +
+  ggplot2::coord_cartesian(xlim = c(0, 365*10)) +  # <-- 10 años en días
+  ggplot2::scale_x_continuous(breaks = 0:(10) * 365, labels = 0:10)
+  ggplot2::labs(title = paste0("Curvas de supervivencia (RSF) - ", N, " pacientes de test"),
+                x = "Días", y = "S(t)") +
+  ggplot2::theme_minimal()
+
+
+
+# --- Variables de esos pacientes (tabla detallada) --------------------
+# Traer id del TEST si existe
+if ("id_paciente" %in% names(datos_clean)) {
+  id_te <- datos_clean$id_paciente[-idx_tr]
+} else {
+  id_te <- seq_len(nrow(df_te))
+}
+
+df_sel_print <- df_sel |> dplyr::mutate(across(where(is.factor), as.character))
+
+meta_sel <- tibble::tibble(
+  fila_test   = pac_idx,
+  id_paciente = id_te[pac_idx],
+  tiempo_real = t_te[pac_idx],
+  evento_real = e_te[pac_idx]
+)
+
+for (i in seq_along(pac_idx)) {
+  cat("\n------------------------------\n")
+  cat("Paciente TEST #", pac_idx[i],
+      "  (ID: ", meta_sel$id_paciente[i], ")",
+      "\nTiempo real: ", meta_sel$tiempo_real[i],
+      "  |  Evento real: ", meta_sel$evento_real[i], "\n", sep = "")
+  
+  tibble::tibble(
+    variable = names(df_sel_print),
+    valor    = as.character(df_sel_print[i, ] |> unlist(use.names = FALSE))
+  ) |>
+    dplyr::arrange(variable) |>
+    print(n = Inf)
+}
+
+# (Opcional) tabla ancha comparativa
+tabla_ancha <- df_sel_print |>
+  tibble::rowid_to_column("pos_en_seleccion") |>
+  dplyr::mutate(
+    fila_test   = pac_idx,
+    id_paciente = id_te[pac_idx],
+    tiempo_real = t_te[pac_idx],
+    evento_real = e_te[pac_idx]
+  ) |>
+  dplyr::relocate(fila_test, id_paciente, tiempo_real, evento_real, pos_en_seleccion)
+
+cat("\nResumen ancho de los", N, "pacientes:\n")
+print(tabla_ancha)
