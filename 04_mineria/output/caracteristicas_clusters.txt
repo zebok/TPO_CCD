@@ -1,0 +1,22 @@
+========== ANÁLISIS DE CLUSTERS K-MEANS ==========
+
+Total de pacientes: 6156 
+Pacientes por cluster:
+
+   1    2    3 
+1040 1302 3814 
+
+
+Top variables discriminantes:
+  cluster symmetry_worst symmetry_mean concavity_se compactness_se
+1       1     -1.4565588   -1.48262687  -1.46874348    -1.47808611
+2       2      1.1100497    1.07750635   1.09001981     1.07758126
+3       3      0.0182319    0.03644957   0.02839209     0.03518583
+  concave_points_mean compactness_mean fractal_dimension_worst concavity_worst
+1         -1.45979341      -1.46600812             -1.47511130     -1.45582566
+2          1.09628759       1.08820265              1.07496885      1.09606730
+3          0.02381193       0.02826655              0.03526647      0.02280521
+  smoothness_mean concavity_mean
+1     -1.45238040    -1.45623143
+2      1.09668668     1.09108178
+3      0.02165432     0.02461778
